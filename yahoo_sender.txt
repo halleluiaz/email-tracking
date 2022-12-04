@@ -1,0 +1,210 @@
+Received: from SA1PR02MB8446.namprd02.prod.outlook.com (2603:10b6:806:1f5::9)
+ by BL0PR02MB4754.namprd02.prod.outlook.com with HTTPS; Sun, 4 Dec 2022
+ 20:06:47 +0000
+Received: from MW2PR2101CA0032.namprd21.prod.outlook.com (2603:10b6:302:1::45)
+ by SA1PR02MB8446.namprd02.prod.outlook.com (2603:10b6:806:1f5::9) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5880.14; Sun, 4 Dec
+ 2022 20:06:46 +0000
+Received: from MW2NAM10FT007.eop-nam10.prod.protection.outlook.com
+ (2603:10b6:302:1:cafe::4a) by MW2PR2101CA0032.outlook.office365.com
+ (2603:10b6:302:1::45) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5924.4 via Frontend
+ Transport; Sun, 4 Dec 2022 20:06:46 +0000
+Authentication-Results: spf=pass (sender IP is 74.6.130.122)
+ smtp.mailfrom=yahoo.com; dkim=pass (signature was verified)
+ header.d=yahoo.com;dmarc=pass action=none header.from=yahoo.com;compauth=pass
+ reason=100
+Received-SPF: Pass (protection.outlook.com: domain of yahoo.com designates
+ 74.6.130.122 as permitted sender) receiver=protection.outlook.com;
+ client-ip=74.6.130.122; helo=sonic316-12.consmr.mail.bf2.yahoo.com; pr=C
+Received: from sonic316-12.consmr.mail.bf2.yahoo.com (74.6.130.122) by
+ MW2NAM10FT007.mail.protection.outlook.com (10.13.154.62) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.5880.13 via Frontend Transport; Sun, 4 Dec 2022 20:06:45 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.com; s=s2048; t=1670184404; bh=EZ0v6zb6FjOQMOnK2t2TgRByuha+bOQZxbXSyDQvIiQ=; h=Date:From:To:Subject:References:From:Subject:Reply-To; b=nY2U2D/27khmTMJ8xopMKIz5xuIbmWe6UGL8thTI+J+V5PFmIQxidlAqT5SrmUHhUUE95n5GqWVm08I7+YrzLfNTPQCsHg1LWpICCgDdmo/FDjwdyiOiGDVjV5Cc520L2oGVveWR/dIP30kzAE7BjiAWfT44eFG3hSDFzvd2EBm4Gt8d3yhTtPv99l7ii5uYph1YPOwkSyLAPfgVVokNivm1dnUYR93XRLoJNeMy1gTSH/f6BR3GcAXXDDSb2ASxnSYDDGZmj0/uLJ8tijoMl7rty9drkbswNpY2WGDsZdhx84jZIlxXPy3BjRiw8wvQprpBn6tnotNsuvEWaOmaAA==
+X-SONIC-DKIM-SIGN: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.com; s=s2048; t=1670184404; bh=3N9CtOrO0GJU7oHUkxy4XqlomCtYdjC4Mv4ZAr6iduN=; h=X-Sonic-MF:Date:From:To:Subject:From:Subject; b=AufBJ6dto0TeQ8Am8v+kP7XjUIS0CEoijp4Gc8q6AaqEBynZVxhYXZFJGS+jRyhNPGVethiXYz+lzppe2xnLUPiQN1k1Qau60+y/5PJpN6bvxDgcwbMqRSnZV0Hd01dMBHnCVzoxikhzjBO2Pb1iFdK2bkZeMSQ8FGvNmERMIn1Q37dQd2o/4LS8MG+L6YYimiLM9i5CTgjdx1YSZkxYWPWpnr+ojF6T6KtNq4eOKqMC+7zlMOwGBmkVB6Gs4MrrQaK/4bumWSdRXSImbUIk6y5FTKzf1mxDdq2sb7g8P1felDjhO78hm2pPo4SeXpczlIdJs5vPbnzCq7B5JzQR7g==
+X-YMail-OSG: LDqZsoAVM1mWqxSD1MtXsqh7AiQ32MnvVd8fFe1_coVcPk9hNO6OC1XdKyc1zYO
+ 4r1HnfzehcZ3gnYmzT63zZsWmzCQ9w6JBWKeU4Rmod1eqmaUCIcxJ9i_UYAHqjStIN6amgzEuaCk
+ 6EJ6wyTk5KhiNeSUs4oWJrP5Ubzzht694x6jfVeCy72qU_SgIc9.APo9P14A15z1jUBqeXRM3mFs
+ 6NZrdmSuIaO4Au6mXNm.LUeUPRW.do6adTIcrJC3ztjrZCgZkCFdc7mLkmX1SGFUwPkHQyHBu6UW
+ Nv.KLToeYHpCB2rFIRKGm27dpRMCSSC74zWsOPlPBKg2DzyZh4jM1.7tKu6ZbiYFAL81U__.LymV
+ ldHwLczn1FRlAYJiSTdO_.vC5JA9fIhvMJ8ZHDJYn5Ih7VdbWgw6CUBZrgvb6I3gcUgbGvDFZEgH
+ TePRQKntcy9i9XQGWcyJx47_kGNeV0zHk4Q7xkhaJd8aO1cjCkFul1VC1uOZ.gX1e_j4hSq_oa3R
+ lDxMRcsBAvAFVmDgvc7FJPJBxJXkxp_ekzORMEoYJAyd3RPhqjhJgZ.Lx1Ycr0JL67U5EuNA4I0c
+ aEUbgVNFt9SudCDcaclrcfUQP0MFqu7Bc41Va_BKbn6ZoxcVJJLAVD9Ck.0ksfVkUN5do1PsrG0Q
+ jFtTdxGW8BNUVAdpi.h2bAQ7QOoJ1HrNq5raP6BEsd3y3BkZmvHqp8zDUPZhvxNrIsNDzSJz0e8f
+ .QhvKXawDwfMMZ3BDH5V.0bN7HX1POLPYH31ewnGPeRN3DEbtnUy2jssLgCMbI2CgKumkz58wWqa
+ FU6TE_oYgFaB5og6R2Bbt8nVJwNP45JYZgVQ2ZPWZHk6NomyN6XYSVNth_1z5Uvzdcf18Q_BVIwo
+ OL10iFRnwj4._D1U5IYfrv3h7g4nt0sYLuYm0WFI9d.ruiI72Ix7hrraus7yDHTnp1TysW6oxbQV
+ j14FeGap9nKig_.0gb4gnnznCIJrWqQufbhC2tXO2_yVz3qJnsfO0QbTriA_MjWRq3RUf_k21DN2
+ F.zhy.pQMcIu8.Tqhpk3pzM9fJbX6L9UbdAmLmsDx807sWT43AVIaALXAaz_Rs303ybIlAfmBfGH
+ RiLnm2MLMpGKn4_l07UhNB5VSEwM3nYo61sU4_P6gArszdm3Rp_ksfOT23b_yKjIr3l0iCJG0vcS
+ j8QfUlAYXCI65PwbhwFsgNCbhb0NFTviId4.es_a0eq2PScd89Mzn6.E8b7Jbl7.nVmMf_Lrat6T
+ OWFlJVYgZiq3odKgvHAvyDdmtomEn8x2n_muHXSNrZeD09HsZcLDuPQL0bBXr.iVzv3pjHt.WoMV
+ Vt5NO79_ZB7dF5cCzEtkJTU7jiwpdaxY.EaP8LH0YSOJXLt5srNk0N38hg0zAS2cnHg2VwwXlW5t
+ P6ZLns5HxJ4xNLZ4ruwaFMkGnB.bG6dh_sqEjSY7df401VbdzU07PKBcxwe5ALKwIo7CAYefLZSu
+ zW0vTXMz.0gs4RgNcuOarDN3kGY8Rd3vE1e0zWSmG6f7GX4_YGaL7JLc.p6yvwLW.TsYrh5e0IAx
+ Bj3vVbs4DExWxVBSlbxF8gNC5zLuO0vUKqqjQ86ZA4ZONAbY11vXEOMpxpLBvQHX8KETdhF.Iz50
+ czI0gnmawdZeDuanVmkC1pBxnFb1mC74uaIcOIXTyqbhTKg6zAxNE7gloamSCw7fL4KlwmTN3F8v
+ r4y_ecsrfzxG8wUa.hRUuDJGnCX0lhvOSmw82t7lwIwee9PSLZbisvXar5VZ_nBDzxZhZ0q8A5Z4
+ 1l7niALPiVeSviAAeeTjkFBb7e9G9gRTHEgO.eK3ZsTYQ8Mt6gjsNWRUarU8uPDdV4.PtJWyF2q6
+ qgJU9VC.Bw7XTnV9aqjVVefxiZY7ETogPWqKipBgW6ykbXUWPbUwjOGlnLvB32_uDfKyRuG_63Gc
+ Na1VcZQAomgscTkA0XiXqmV0BkxG0_YbWT_zNA2e4vSLdbZiOPfyz0h2M.ReePybsMOgXYeI0JoN
+ 2c3W7HubqHbVQfMn.W2L2x9S93D86Rg_RULe1v6_vxnStxLOu9XUgsWQySMYkhbTVqA_fQPP5zXm
+ KWY69F2bW5L91U0.l_SK3_9YDhJpwrrZJLONVocXW81YQz9OjiTgJ_tTDZgi7IGWEAxrbEgrOYtp
+ LrbemI3eZoYps5tmbYOedO2G_SBswRSKDKjSBCybmk_jnGSdsY2QWrO1SiEzSWIfU58H2oydhJ4i
+ pSO8N67gwMIzEEuwNN7PC2sQ-
+X-Sonic-MF: <geolocation_testing@yahoo.com>
+Received: from sonic.gate.mail.ne1.yahoo.com by sonic316.consmr.mail.bf2.yahoo.com with HTTP; Sun, 4 Dec 2022 20:06:44 +0000
+Date: Sun, 4 Dec 2022 20:06:41 +0000 (UTC)
+From: Jane Doe <geolocation_testing@yahoo.com>
+To: "halleluia_zeyohannes@student.uml.edu" <halleluia_zeyohannes@student.uml.edu>
+Message-ID: <307907477.567837.1670184401728@mail.yahoo.com>
+Subject: Hello
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_567836_566862285.1670184401727"
+References: <307907477.567837.1670184401728.ref@mail.yahoo.com>
+X-Mailer: WebService/1.1.20926 YMailNorrin
+Content-Length: 508
+Return-Path: geolocation_testing@yahoo.com
+X-MS-Exchange-Organization-ExpirationStartTime: 04 Dec 2022 20:06:45.8925
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id:
+ 4f9f209b-0ffb-4e97-6b91-08dad63311ef
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: 4c25b8a6-17f7-46f9-83f0-54734ab81fb1:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: MW2NAM10FT007:EE_|SA1PR02MB8446:EE_
+X-MS-Exchange-Organization-AuthSource:
+ MW2NAM10FT007.eop-nam10.prod.protection.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: 4f9f209b-0ffb-4e97-6b91-08dad63311ef
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:0;
+X-Forefront-Antispam-Report:
+ CIP:74.6.130.122;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:sonic316-12.consmr.mail.bf2.yahoo.com;PTR:sonic316-12.consmr.mail.bf2.yahoo.com;CAT:NONE;SFTY:9.25;SFS:(13230022)(4636009)(84050400002)(451199015)(86362001)(7596003)(33964004)(91926014)(26005)(37276005)(6666004)(58800400005)(5660300002)(7116003)(8676002)(11686005)(34756004)(1096003)(6916009)(7636003)(356005)(3480700007)(336012)(82202003)(83380400001)(426003)(14353004)(62882003);DIR:INB;SFTY:9.25;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Dec 2022 20:06:45.6738
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4f9f209b-0ffb-4e97-6b91-08dad63311ef
+X-MS-Exchange-CrossTenant-Id: 4c25b8a6-17f7-46f9-83f0-54734ab81fb1
+X-MS-Exchange-CrossTenant-AuthSource:
+ MW2NAM10FT007.eop-nam10.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SA1PR02MB8446
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:01.8148456
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.5880.013
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910001)(944506478)(944626604)(920097)(930097);
+X-Microsoft-Antispam-Message-Info:
+	=?us-ascii?Q?tq7smgwniBbR4wEgewsQPjVl4wrKDX+LSHJk7ClwYaxzvB+YOUnTi/dgPsno?=
+ =?us-ascii?Q?o0l4Xm6qdS8QVfgWDPek5pNH1JyZ67gBLbxcEqyDT4Sxtkg67fsoTSZsqLDU?=
+ =?us-ascii?Q?4HkT7Tcf88JHNGnDh1vsH0oYbv7JfgNBobsXt7ZaTS6ip92pQ4CZDN4zBwOG?=
+ =?us-ascii?Q?fCs5DQ4FOkRvHZDI9YWMpzx4VDc7ten9hDU8WqJRV6BLQcFi7yE2JoX1rGcr?=
+ =?us-ascii?Q?S3OvpxA2GZOc3jkeXhJgRBHs14FO9o4BZoOQgeJG8Zs9tp3D8ikehMmGpHQl?=
+ =?us-ascii?Q?ZqWIXZpbpSy0lMjz+vbbTn7oY3P/3V3BsiQTxDLBpnnzGk+cbhOMadivULTC?=
+ =?us-ascii?Q?PVTlkR/19RmENr/e2JRREul1Vz1JabSTa0/uiHLRdO19qqHBVL+1rWdBuVyl?=
+ =?us-ascii?Q?GSxsLeJj0kOlIP6ElA9V4o17X5UGwNUDRVfMfYBXkTm9omCXCTurcg9iQCtH?=
+ =?us-ascii?Q?IAX45/Q4+G6mBI7TQxdBXjnyQxC0/xlyoIrYiyqlwn0int8DC3rAPMJq3iTJ?=
+ =?us-ascii?Q?dGpkRzd/Iky5mSD+Tg2sWgYHS7OujRQrelgEE2eZ414t4cWRsCfCQ1lgxL7J?=
+ =?us-ascii?Q?WNTcW8Jhb8WEVpLpjG22SAwIJyAXnqXeGOZhbHsLTQvxjf8/0HfIDXIXi/oh?=
+ =?us-ascii?Q?RRRy1JXLWOIv2al3wWBTfPtAPHuicJedpv4ckyApn9HClLCC93UwWtGG1Rmt?=
+ =?us-ascii?Q?j9dcP1pZ/fUDEX9V7nr4JZTF04cyrMjdKmWd7eqUXHwRuY3IFYtUwW6uAvAI?=
+ =?us-ascii?Q?sVMMj22br2sQT+rIvk5DoK4V7CSrSSj2WDR/HfHTyRupRscHCmmQRfJK4dKF?=
+ =?us-ascii?Q?WbXbr+JysLMPMYy/Pgah789ecf8Ea4VWVKMmJR2figLvcRRF+PRKD7bVyOCE?=
+ =?us-ascii?Q?h/OB2NtwlcCSOiDp/oaZu3xuALBIACdkX53R8isfzanv2dbC+L/MZMSx56BX?=
+ =?us-ascii?Q?l62gjlgMihq56uEZ0QLAfdeCr9AFQsVXpOt35v+1IdA6RlBe0KmbMb2gap9K?=
+ =?us-ascii?Q?fE4y+Zc7O2q7ZU+BkXfKdC6U/viwt1BwAWCPFf6ig3rRd4WASWDVYT9eB3qf?=
+ =?us-ascii?Q?ccc5WzUej8leUPos/BiK2VKURvexlX1bZHIJMkXmLcD+ycNmIc/eleWGEPXa?=
+ =?us-ascii?Q?L565sJlUBF9uF08vzta0rqyosy0B+nJvHbDIn9y/Usgg9rEqZxJ5rb96rNZy?=
+ =?us-ascii?Q?Comno0qYtkVDwVO64jx40dNH51yU1kuQbnBgh/VZ18lZ+A+82wjUtzx1aevQ?=
+ =?us-ascii?Q?6Qwkhw4cM2jg+S+HL0PTga+9X3KpA32AyQww6adtY7rRdJ0Mv5OqI1lpv7rr?=
+ =?us-ascii?Q?i1uPaApEL5tVJsbrR8VpvkS+bt2tsWfI6mx3iIo7QHaTKWKT2Ht+atJC23wM?=
+ =?us-ascii?Q?6vj13Xx/Jje+SSvmWQ7YQsLOcO8VFnMUGHb0U5cjbSASt5h23zxK7vaEUfTa?=
+ =?us-ascii?Q?BXomHZI7TjW4e9LG1wEjkHt5c1oTT2XJIX68Qv8kF7Zr6DFsCUgMOfcka4kE?=
+ =?us-ascii?Q?qJ03CnLrBA5NZrZIc+JU/9jZNpbKJM/NcxRr0LtF4rSCJmA+xRs76yEpTeDy?=
+ =?us-ascii?Q?OhQKFp76ET/IY52IfGusSaVvCnR9PH4Rb7p81EXIgofMbRReg7+pr4InxqtH?=
+ =?us-ascii?Q?VYjquGnK8A+xfqlu1g/YaAjfpxnvLacrKwcqoZofSArUhBw1XqJp3lR11sf9?=
+ =?us-ascii?Q?1hvqtjKCNd6ZOtDrPq4oQb0BboZ+DrQBVPHcQ7OxzHrHbD9bnpKyyPnYOvBD?=
+ =?us-ascii?Q?esMOhl6oEo+Ghf5RucNT2PuMiLW0Mm4iYWv4hlEgH32MNEsTka168/CrxEeA?=
+ =?us-ascii?Q?sNLfl3ARC1lqpQW91IDGbk6ZGCt3OSgGWgL3euku1Em5wN505xeTcLM/LWUj?=
+ =?us-ascii?Q?aDwBBdcVSqe5EG0DuhPeD/qdXkfsdS7QeJIlCimGj7Ad9nFkydfjPqVLYYR7?=
+ =?us-ascii?Q?nw8By7rdN5V7kt58HT1e6w=3D=3D?=
+MIME-Version: 1.0
+
+------=_Part_567836_566862285.1670184401727
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+You don't often get email from geolocation_testing@yahoo.com. Learn why thi=
+s is important<https://aka.ms/LearnAboutSenderIdentification>
+
+CAUTION: This e-mail was sent from a free webmail service. If the sender is=
+ unknown or you suspect anything suspicious forward this e-mail to phishing=
+@uml.edu.
+
+
+Try to find me.
+
+------=_Part_567836_566862285.1670184401727
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"></=
+head>
+<body>
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" styl=
+e=3D"cellpadding:0;border:0;cellspacing:0;display:table;width:100%;table-la=
+yout:fixed;border-collapse:seperate;float:none;" align=3D"left">
+<tbody style=3D"display:block;">
+<tr>
+<td valign=3D"middle" width=3D"1px" bgcolor=3D"#A6A6A6" cellpadding=3D"7px =
+2px 7px 2px" style=3D"padding:7px 2px 7px 2px;background-color:#A6A6A6;vali=
+gn:middle">
+</td>
+<td valign=3D"middle" width=3D"100%" bgcolor=3D"#EAEAEA" cellpadding=3D"7px=
+ 5px 7px 15px" color=3D"#212121" style=3D"width:100%;background-color:#EAEA=
+EA;padding:7px 5px 7px 15px;font-family:wf_segoe-ui_normal,Segoe UI,Segoe W=
+P,Tahoma,Arial, sans-serif;font-size:12px;font-weight:normal;color:#212121;=
+text-align:left;word-wrap:break-word;">
+<div>You don't often get email from geolocation_testing@yahoo.com. <a href=
+=3D"https://aka.ms/LearnAboutSenderIdentification">
+Learn why this is important</a></div>
+</td>
+<td valign=3D"middle" align=3D"left" width=3D"75px" bgcolor=3D"#EAEAEA" cel=
+lpadding=3D"7px 5px 7px 5px" color=3D"#212121" style=3D"width:75px;backgrou=
+nd-color:#EAEAEA;padding:7px 5px 7px 5px;font-family:wf_segoe-ui_normal,Seg=
+oe UI,Segoe WP,Tahoma,Arial, sans-serif;font-size:12px;font-weight:normal;c=
+olor:#212121;text-align:left;word-wrap:break-word;align:left">
+</td>
+</tr>
+</tbody>
+</table>
+<div>
+<p></p>
+<div style=3D"background-color:#FFCACA; border-style: hidden; border-color:=
+#FFCACA; border-width:1pt; padding:2pt; font-size:12pt; line-height:16pt; f=
+ont-family:Calibri; color:Black; text-align: left;">
+<span style=3D"font-weight:bold;">CAUTION:</span> This e-mail was sent from=
+ a free webmail service. If the sender is unknown or you suspect anything s=
+uspicious forward this e-mail to phishing@uml.edu.</div>
+<br>
+<p></p>
+<div>
+<div class=3D"yahoo-style-wrap" style=3D"font-family:Helvetica Neue, Helvet=
+ica, Arial, sans-serif;font-size:16px;">
+<div dir=3D"ltr" data-setdir=3D"false">Try to find me.</div>
+</div>
+</div>
+</div>
+</body>
+</html>
+
+------=_Part_567836_566862285.1670184401727--

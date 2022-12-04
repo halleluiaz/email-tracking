@@ -1,0 +1,198 @@
+Received: from CH0PR02MB8274.namprd02.prod.outlook.com (2603:10b6:610:f8::24)
+ by BL0PR02MB4754.namprd02.prod.outlook.com with HTTPS; Sun, 4 Dec 2022
+ 19:50:10 +0000
+Received: from BN0PR02CA0017.namprd02.prod.outlook.com (2603:10b6:408:e4::22)
+ by CH0PR02MB8274.namprd02.prod.outlook.com (2603:10b6:610:f8::24) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5880.14; Sun, 4 Dec
+ 2022 19:50:09 +0000
+Received: from BN7NAM10FT106.eop-nam10.prod.protection.outlook.com
+ (2603:10b6:408:e4:cafe::cc) by BN0PR02CA0017.outlook.office365.com
+ (2603:10b6:408:e4::22) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5880.13 via Frontend
+ Transport; Sun, 4 Dec 2022 19:50:09 +0000
+Authentication-Results: spf=pass (sender IP is 209.85.160.47)
+ smtp.mailfrom=gmail.com; dkim=pass (signature was verified)
+ header.d=gmail.com;dmarc=pass action=none header.from=gmail.com;compauth=pass
+ reason=100
+Received-SPF: Pass (protection.outlook.com: domain of gmail.com designates
+ 209.85.160.47 as permitted sender) receiver=protection.outlook.com;
+ client-ip=209.85.160.47; helo=mail-oa1-f47.google.com; pr=C
+Received: from mail-oa1-f47.google.com (209.85.160.47) by
+ BN7NAM10FT106.mail.protection.outlook.com (10.13.156.185) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.5880.13 via Frontend Transport; Sun, 4 Dec 2022 19:50:09 +0000
+Received: by mail-oa1-f47.google.com with SMTP id 586e51a60fabf-1322d768ba7so11243693fac.5
+        for <halleluia_zeyohannes@student.uml.edu>; Sun, 04 Dec 2022 11:50:09 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=CuVF+Gym15XkhJ/0GS4Lf7Vfsj6eaLzMjNLS7xPeQLw=;
+        b=DO16lCFlnvGd+6AxUKCw9+y11arYv8Er20qk3gJecc/x+I37X4wUrKoF97YMWVe6CJ
+         UwWoPp1EdjcvO8QvFQma7iiJq8HI+rK/O/jo729rkO2ZBmyHdANT9VexldN2Rd6wtcya
+         QueT+S8phpF4l5a9Hzwz05xQ5WQPuOLYICT7CarK7Y7B/3g7dISdXb6GIbQ6iYslXVDU
+         6xGjwlmMZG0a7xa9Kq20o5/GC9n2HnpVtQi2qTqADMbsmNeMlYgcCJWyAMw/cwObK4ta
+         SEEX664Baz0tKqGztVDTH+wQXpcqbe8ASaPylhnG2MQVh2QXQwvHpP+WAArrLdbyEy+A
+         VLsQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=CuVF+Gym15XkhJ/0GS4Lf7Vfsj6eaLzMjNLS7xPeQLw=;
+        b=GcHeZYabEVgur2QxvzztF+NRQGD9RMXu0AG82T5k1bXu4OAGjYv91kGPcxhBwkcpDJ
+         qLXTPWHNNeUyWSJIenWnUyRxURORyVVf/wB9hdzjsDY8YsBVNCQx/G/JbLxsZZrb4QFs
+         CydWThQKt/yj8pUrA9rWTMXpb8dU3yFq/mxd4MXhAFKn2otRC+sqyy7K4wlayAzw6ipG
+         1dvC6y+LR5uLR2XJZTZdPQ5tJCpcMsCIy5uTVvGh5sgXD2vB1C1AtVbCVERh+K/6Suwo
+         4NX2/HUcCGK7359QozTMuuBECmai1NGfLjK7RA6AL4+YtYr9MtSstKcFrbUhqHh2h9pw
+         OwjA==
+X-Gm-Message-State: ANoB5pl34lCtLBJnh/BIjoFHthnpa+BuOGWls1uzE98nfeNxm5+GA96R
+	PBuyrLWTL0LNoLAZJaElqrLwDS3SP/IkMO+ftJmQHssgVAsOK+L4
+X-Google-Smtp-Source: AA0mqf42C2IVGpIGNgLK55mZZinK5WvlxLkKXy8nc3XF9Y954UgDkiPhVeu3z8L6y8utRDp/w6m3EEk0TSBszfb6PJ0=
+X-Received: by 2002:a05:6870:3d87:b0:13c:674a:c10 with SMTP id
+ lm7-20020a0568703d8700b0013c674a0c10mr37012833oab.216.1670183408605; Sun, 04
+ Dec 2022 11:50:08 -0800 (PST)
+From: Jane Doe <ipgeolocation.testing@gmail.com>
+Date: Sun, 4 Dec 2022 14:49:57 -0500
+Message-ID: <CAJ8LZa__HzgwPrFKU4mOx9_UAPL+3FN_QW3hO8iuUJEmvzTzeA@mail.gmail.com>
+Subject: Hello
+To: halleluia_zeyohannes@student.uml.edu
+Content-Type: multipart/alternative; boundary="000000000000c79dec05ef05e042"
+Return-Path: ipgeolocation.testing@gmail.com
+X-MS-Exchange-Organization-ExpirationStartTime: 04 Dec 2022 19:50:09.3721
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id:
+ 03fd8de6-f268-47ae-7827-08dad630bff6
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: 4c25b8a6-17f7-46f9-83f0-54734ab81fb1:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: BN7NAM10FT106:EE_|CH0PR02MB8274:EE_
+X-MS-Exchange-Organization-AuthSource:
+ BN7NAM10FT106.eop-nam10.prod.protection.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: 03fd8de6-f268-47ae-7827-08dad630bff6
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:0;
+X-Forefront-Antispam-Report:
+ CIP:209.85.160.47;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail-oa1-f47.google.com;PTR:mail-oa1-f47.google.com;CAT:NONE;SFTY:9.25;SFS:(13230022)(4636009)(84050400002)(451199015)(83380400001)(3480700007)(86362001)(7636003)(7596003)(356005)(55446002)(22186003)(5660300002)(34756004)(7116003)(1096003)(8676002)(82202003)(33964004)(26005)(58800400005)(6666004)(73392003)(336012)(42186006)(6916009)(76482006)(136870200003)(14353004);DIR:INB;SFTY:9.25;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Dec 2022 19:50:09.3252
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 03fd8de6-f268-47ae-7827-08dad630bff6
+X-MS-Exchange-CrossTenant-Id: 4c25b8a6-17f7-46f9-83f0-54734ab81fb1
+X-MS-Exchange-CrossTenant-AuthSource:
+ BN7NAM10FT106.eop-nam10.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH0PR02MB8274
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:01.4439437
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.5880.013
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910001)(944506478)(944626604)(920097)(930097);
+X-Microsoft-Antispam-Message-Info:
+	=?us-ascii?Q?23BMjAxdHy7Rs07UJm2n0EPMVQbGiUQ8H064IhkfLp/ouHNNQNpGVFmBJMha?=
+ =?us-ascii?Q?FTRK/GMZ3KDjLn2QayuRNMvbiMrGmKxW7S7+afXhOQOITnAtl607e79SLLQC?=
+ =?us-ascii?Q?sh38/BsLOvkzcSn+6BQUFCnLUrQ8KL4Zsubs8BflWC/TGTrfHwwmZz0c5R92?=
+ =?us-ascii?Q?P9Q9sIOnicbKFvgJmqiAM5+Y3JCBfd25FzqZknLqo/DmzuqbbYs3qZyEj7L6?=
+ =?us-ascii?Q?4/ztn046L60v0+xWvzdcP5hLGjz1aXRETEC/Z6dq3YErV8C2XLa4tpHIDIRs?=
+ =?us-ascii?Q?797RJA4ODt1FK7GK/RtPTXa1txrxhzWA9aL+gfpLAWFLm2J5zaQrXl1IlAYS?=
+ =?us-ascii?Q?AFVoKZUvyine5+UgzMTMNgTbdL2xCLcc181uamuojfI9OlJ61uU2cFbThkn8?=
+ =?us-ascii?Q?ateKmaxHi6y+/YLu8p22FLO8hP7rbMKRT+TOERDEjBOfqjwkMuf6W2uHhnQl?=
+ =?us-ascii?Q?JPgahn7flcsxj7Q2w7eZ8fsRCy9qWOkSsrBX0LC+UPN/z1WWqSgWGKTbRkGk?=
+ =?us-ascii?Q?PQVc1Q1VGhqkulGYsY9Cf/BIhFj71iM7QaZjPZis8FL3jYER0kfpZJUoz2tx?=
+ =?us-ascii?Q?vahvMppoPbXDHpMVTxhY5gs8NMiYIwZpUq3uSc/8hc3sGV/tCVRzDpqlniJt?=
+ =?us-ascii?Q?OW+OJW6BEGg/TG+lkqU7MJy5ayfM42c2q8eO3VGbWsEfRjb69RY4Jx40640+?=
+ =?us-ascii?Q?/fIf1EwqmkjDniFV7nVMNb+8vl6Qp7l2+A4A50Y+HfawjZ5LwCxGkluPtpZQ?=
+ =?us-ascii?Q?T7cYOchzHMoPChXZYRu+5DrMJtS7mIjUHfXRAgy9inoIfhg3kX/jiCo4ilT6?=
+ =?us-ascii?Q?Y6db/nxbXTeD0IgKNFldLKoi37+GvargLRPeFGfU9SugPZRTSwYffACNXWTg?=
+ =?us-ascii?Q?0DQYxUKe1mm221iCj6uOr9KLo+05gwWrQRG8Oc/J9VHQ6rjkaHM5HVHXPMLA?=
+ =?us-ascii?Q?/y/MonN6gl8wIGtyJ9agk0e6792BIW/lXnQVUbwCtA15TSOjXzAAIE89lKr4?=
+ =?us-ascii?Q?PI2A5OuIOYArkPLSaA+9Fi2l5L4dGmY0FNJwMtExxmlg52L+gyK/liZJolRh?=
+ =?us-ascii?Q?kN1LaxOgfaB44189cK+5u64RBFUzDCA5g/cgUd7RSogddE9xRXGuLeGfDSKw?=
+ =?us-ascii?Q?yMI40tOT4SgIgXyqPj1KcL+3FzVgNIa5Gylay3/zzjCQ2ASz6O3dWsYwP7MX?=
+ =?us-ascii?Q?Dzf/8VIAePCTRkY/7fHsZFqb8qYMdAW9gYAhkZKGHpq6rYhHQ4GhxC9GzVBX?=
+ =?us-ascii?Q?PjtX0z61eRrd2eKZNXSsPZhD9hQEm+KrIGdB118tqJpWFtJWSoCJpbIyPOyQ?=
+ =?us-ascii?Q?SBlCR3hBY+rCo9Qf9bMwBYv1fKBkcd27Coxju2hH+x0hEyVd/4MXNC8RwxZu?=
+ =?us-ascii?Q?2yFrKwqCVzoioDOZxr7gNNfT3dn4q9CnUqd8JBljZJGnAwWdAqa1E9xOa833?=
+ =?us-ascii?Q?0Z64tTIJiTzJBWapfo+3Ed8OKC/ph+UhU/KomBn2LqZIveuK2QpiqYBaL/2I?=
+ =?us-ascii?Q?pKWbGnyA/A1Sc3IYRw719Pd/ktzoA7n3q59zOZ6nJ23TxmxaPwGA/YQQKSeG?=
+ =?us-ascii?Q?FysyJl8brUTztwYmSU9+vTtiH/Orx3wkiMJnDiJqvzG2LvmhkY7JUMDG4gIp?=
+ =?us-ascii?Q?5ZYAhrVmKpScrIf1Wf5N0BfMLvwN4z0DZvlwFwZ/voQsKtzA0XUS3z02WBKv?=
+ =?us-ascii?Q?44aRbv/6nrQnnzTl//VYH1jfPmsyseqh56i8jnZDPcR0T5wJNwIGpRnF57fT?=
+ =?us-ascii?Q?Ut0E9XqyCzg8Rb7cxg7gPjsvlgoA37lgGC1Jim3mwg3tH2hBpT7n2BcfEvZ8?=
+ =?us-ascii?Q?TFO6qYWkcHDUF3u0E/iYdIlCejLshz135Bw0hraWtRzAF71szdujwTEFPEL2?=
+ =?us-ascii?Q?s/HbYLulfknhw1exQ87PkUmDmpqGpF9sD0c3g+SkGtUvS4gKxa01yJLaASHw?=
+ =?us-ascii?Q?NsZZh0sSN+UE8uwz2FL7DQ=3D=3D?=
+MIME-Version: 1.0
+
+--000000000000c79dec05ef05e042
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+You don't often get email from ipgeolocation.testing@gmail.com. Learn why t=
+his is important<https://aka.ms/LearnAboutSenderIdentification>
+
+CAUTION: This e-mail was sent from a free webmail service. If the sender is=
+ unknown or you suspect anything suspicious forward this e-mail to phishing=
+@uml.edu.
+
+
+Try to find me.
+
+--000000000000c79dec05ef05e042
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"></=
+head>
+<body>
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" styl=
+e=3D"cellpadding:0;border:0;cellspacing:0;display:table;width:100%;table-la=
+yout:fixed;border-collapse:seperate;float:none;" align=3D"left">
+<tbody style=3D"display:block;">
+<tr>
+<td valign=3D"middle" width=3D"1px" bgcolor=3D"#A6A6A6" cellpadding=3D"7px =
+2px 7px 2px" style=3D"padding:7px 2px 7px 2px;background-color:#A6A6A6;vali=
+gn:middle">
+</td>
+<td valign=3D"middle" width=3D"100%" bgcolor=3D"#EAEAEA" cellpadding=3D"7px=
+ 5px 7px 15px" color=3D"#212121" style=3D"width:100%;background-color:#EAEA=
+EA;padding:7px 5px 7px 15px;font-family:wf_segoe-ui_normal,Segoe UI,Segoe W=
+P,Tahoma,Arial, sans-serif;font-size:12px;font-weight:normal;color:#212121;=
+text-align:left;word-wrap:break-word;">
+<div>You don't often get email from ipgeolocation.testing@gmail.com. <a hre=
+f=3D"https://aka.ms/LearnAboutSenderIdentification">
+Learn why this is important</a></div>
+</td>
+<td valign=3D"middle" align=3D"left" width=3D"75px" bgcolor=3D"#EAEAEA" cel=
+lpadding=3D"7px 5px 7px 5px" color=3D"#212121" style=3D"width:75px;backgrou=
+nd-color:#EAEAEA;padding:7px 5px 7px 5px;font-family:wf_segoe-ui_normal,Seg=
+oe UI,Segoe WP,Tahoma,Arial, sans-serif;font-size:12px;font-weight:normal;c=
+olor:#212121;text-align:left;word-wrap:break-word;align:left">
+</td>
+</tr>
+</tbody>
+</table>
+<div>
+<p></p>
+<div style=3D"background-color:#FFCACA; border-style: hidden; border-color:=
+#FFCACA; border-width:1pt; padding:2pt; font-size:12pt; line-height:16pt; f=
+ont-family:Calibri; color:Black; text-align: left;">
+<span style=3D"font-weight:bold;">CAUTION:</span> This e-mail was sent from=
+ a free webmail service. If the sender is unknown or you suspect anything s=
+uspicious forward this e-mail to phishing@uml.edu.</div>
+<br>
+<p></p>
+<div>
+<div dir=3D"ltr">Try to find me.</div>
+</div>
+</div>
+</body>
+</html>
+
+--000000000000c79dec05ef05e042--
